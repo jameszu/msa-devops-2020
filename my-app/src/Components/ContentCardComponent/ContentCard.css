@@ -1,0 +1,17 @@
+.ContentCardContainer
+{
+    max-width: 310px;
+    margin: auto;
+}
+.ContentCardImage
+{
+    height: 200px !important;
+    max-width: 310px;
+}
+.ContentCardDescription
+{
+    height: 200px;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    font-family: "Fira code" !important;
+}
