@@ -13,7 +13,9 @@ interface IContentGridProps {
 }
 function ContentGrid(props: IContentGridProps) {
     // const [ItemArray, setItemArray] = useState<IState[]>([{ links: [], data: [] }]);
-    const APIKey = process.env.REACT_APP_API_KEY;
+    // const APIKey = process.env.REACT_APP_API_KEY;
+
+    const APIKey = "57b49859795126623fb177661d312163";
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
         { poster_path: "", overview: "" }
     ]);
