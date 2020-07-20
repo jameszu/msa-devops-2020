@@ -13,7 +13,7 @@ interface IContentGridProps {
 }
 function ContentGrid(props: IContentGridProps) {
     // const [ItemArray, setItemArray] = useState<IState[]>([{ links: [], data: [] }]);
-    const APIKey = "57b49859795126623fb177661d312163";
+    const APIKey = process.env.REACT_APP_API_KEY;
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
         { poster_path: "", overview: "" }
     ]);
@@ -42,28 +42,6 @@ function ContentGrid(props: IContentGridProps) {
                 Plot={element.overview} />
             </Grid>)
       });
-    // useEffect(() => {
-    //     fetch('https://images-api.nasa.gov/search?media_type=image&q=' + props.SearchQuery + '&year_start=' + props.StartDate?.getFullYear() + '&year_end=' + props.EndDate?.getFullYear())
-    //         .then(response => response.json())
-    //         .then(response => {
-    //             setItemArray(response.collection.items)
-    //         })
-    //         .catch(() => console.log("it didn't work")
-    //         );
-
-    // }, [props.SearchQuery, props.EndDate, props.StartDate]);
-
-    // var Cards: JSX.Element[] = [];
-    // ItemArray.forEach((el: IState, i: Number) => {
-    //     if (!el || !el.links[0] || !el.data) {
-    //         return;
-    //     }
-    //     Cards.push(
-    //         <Grid key={"card_"+i} item sm={6} md={4} lg={3} className="MediaGridCard">
-    //             <MediaCard ImageUrl={el['links'][0]['href']} Description={el["data"][0]['description']} />
-    //         </Grid>)
-    // })
-
     return (
         <div>
             <Grid container spacing={3} className="ContentGridContainer">

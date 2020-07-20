@@ -28,6 +28,7 @@ function App() {
 
   return (
     <div className="App" >
+      <h1>Search Any Movie U Want</h1>
       <MuiThemeProvider theme={theme}>
           <SearchBox SetUserInput={(a: IUserInput) => SetUserInput(a)}/>
           <ContentGrid InputQuery={UserInput.InputQuery}/>
