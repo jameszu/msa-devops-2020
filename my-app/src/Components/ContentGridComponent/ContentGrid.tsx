@@ -17,6 +17,7 @@ function ContentGrid(props: IContentGridProps) {
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
         { poster_path: "", overview: "" }
     ]);
+    console.log(APIKey);
     useEffect(() => {
         fetch(
             "https://api.themoviedb.org/3/search/movie?api_key=" +
