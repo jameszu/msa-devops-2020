@@ -17,7 +17,7 @@ declare var process : {
     }
   }
 function ContentGrid(props: IContentGridProps) {
-    const API_KEY = process.env.REACT_APP_API_KEY;
+    var API_KEY = process.env.REACT_APP_API_KEY;
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
         { poster_path: "", overview: "" }
     ]);
