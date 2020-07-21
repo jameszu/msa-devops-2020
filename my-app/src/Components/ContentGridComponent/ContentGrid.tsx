@@ -12,17 +12,15 @@ interface IContentGridProps {
     
 }
 function ContentGrid(props: IContentGridProps) {
-    // const [ItemArray, setItemArray] = useState<IState[]>([{ links: [], data: [] }]);
-    // const APIKey = process.env.REACT_APP_API_KEY;
-    const APIKey = "57b49859795126623fb177661d312163"
+    const API_KEY = process.env.REACT_APP_API_KEY;
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
         { poster_path: "", overview: "" }
     ]);
-    console.log(APIKey);
+    console.log(API_KEY);
     useEffect(() => {
         fetch(
             "https://api.themoviedb.org/3/search/movie?api_key=" +
-            APIKey +
+            API_KEY +
             "&language=en-US&query=" +
             props.InputQuery +
             "&page=1"
