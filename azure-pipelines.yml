@@ -24,6 +24,7 @@ steps:
   - script: |
       cd $(rootDir)
       npm install
+      npm install --save @types/node
       npm run build
       cd ..
     displayName: 'npm install and build'
