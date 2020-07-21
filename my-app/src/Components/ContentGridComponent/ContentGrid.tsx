@@ -11,17 +11,12 @@ interface IContentGridProps {
     InputQuery: string | null;
     
 }
-declare var process : {
-    env: {
-        REACT_APP_API_KEY: string
-    }
-  }
+
 function ContentGrid(props: IContentGridProps) {
     var API_KEY = process.env.REACT_APP_API_KEY;
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
         { poster_path: "", overview: "" }
     ]);
-    console.log(API_KEY);
     useEffect(() => {
         fetch(
             "https://api.themoviedb.org/3/search/movie?api_key=" +
