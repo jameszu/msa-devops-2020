@@ -12,17 +12,17 @@ pool:
 variables:
   rootDir: "my-app"
   buildDir: "$(rootDir)/build"
-  REACT_APP_DRIVE_KEY: ${APP_KEY}
+  REACT_APP_DRIVE_KEY: $(APP_KEY)
 
 steps:
-  - bash:
-      echo "API is $APP_KEY"
+  - bash: |
+      echo "API is $(APP_KEY)"
   - task: NodeTool@0
     inputs:
       versionSpec: '10.x'
     displayName: 'Install Node.js'
     env:
-        REACT_APP_DRIVE_KEY: ${APP_KEY}
+        REACT_APP_DRIVE_KEY: $(APP_KEY)
   - script: |
       cd $(rootDir)
       npm install
