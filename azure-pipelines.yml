@@ -12,7 +12,6 @@ pool:
 variables:
   rootDir: "my-app"
   buildDir: "$(rootDir)/build"
-  REACT_APP_API_KEY: $(APP_KEY)
 
 steps:
   - task: CmdLine@2
@@ -29,7 +28,6 @@ steps:
   - script: |
       cd $(rootDir)
       npm install
-      npm install --save @types/node
       npm run build
       cd ..
     displayName: 'npm install and build'
