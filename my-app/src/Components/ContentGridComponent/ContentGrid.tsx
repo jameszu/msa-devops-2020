@@ -6,6 +6,7 @@ import './ContentGrid.css';
 interface IState {
     overview: string | undefined;
     poster_path: string | null;
+    original_title: string | undefined;
   }
 interface IContentGridProps {
     InputQuery: string | null;
@@ -15,7 +16,7 @@ interface IContentGridProps {
 function ContentGrid(props: IContentGridProps) {
     var API_KEY = process.env.REACT_APP_API_KEY;
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
-        { poster_path: "", overview: "" }
+        { poster_path: "", overview: "", original_title: ""}
     ]);
     useEffect(() => {
         fetch(
@@ -31,15 +32,16 @@ function ContentGrid(props: IContentGridProps) {
           );
 
       }, [props.InputQuery]);
-      const dimentions = "w300";
+      const dimentions = "w500";
       let images: JSX.Element[] = [];
       dataFromAPI.forEach(element => {
-        if (dataFromAPI === [{ poster_path: "", overview: "" }]) return null;
+        if (dataFromAPI === [{ poster_path: "", overview: "", original_title: "" }]) return null;
         images.push(
-            <Grid key={"card_"} item sm={6} md={4} lg={3} className="ContentGridCard">
+            <Grid item md={4} lg={3} className="ContentGridCard">
                 <ContentCard 
                 ImageUrl={"https://image.tmdb.org/t/p/" + dimentions + element.poster_path} 
-                Plot={element.overview} />
+                Plot={element.overview}
+                Title={element.original_title} />
             </Grid>)
       });
     return (

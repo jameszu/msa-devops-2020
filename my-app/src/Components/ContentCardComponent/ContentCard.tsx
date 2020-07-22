@@ -10,6 +10,7 @@ interface IContentCardProps
 {
     ImageUrl: string | undefined;
     Plot: string | undefined;
+    Title: string | undefined;
     // Rating: string | undefined;
 }
 function ContentCard(props: IContentCardProps)
@@ -23,12 +24,15 @@ function ContentCard(props: IContentCardProps)
                         image={props.ImageUrl}
                     />
                     <CardContent>
+                        <Typography className="Title" gutterBottom variant="h5" component="h5">
+                            {props.Title}
+                        </Typography>
                         <Typography variant="body2" 
                                     color="textSecondary"
                                     component="p"
                                     className="ContentCardDescription">
                                         {props.Plot}
-                                    </Typography>
+                        </Typography>
                     </CardContent>
                 </CardActionArea>
             </Card>

@@ -1,18 +1,35 @@
 .ContentCardContainer
 {
-    max-width: 310px;
+
+    max-width: 500px;
     margin: auto;
+
 }
 .ContentCardImage
 {
-    height: 200px !important;
-    max-width: 310px;
+    height: 300px !important;
+    max-width: 250px;
+    
 }
 .ContentCardDescription
 {
-    height: 200px;
+    height: 100px;
+    width: 200px;
     overflow-y: scroll;
     overflow-wrap: break-word;
     font-family: "Roboto" !important;
     text-align: left !important;
 }
+.Content
+{
+    display: "flex";
+    flex-Direction: "column";
+    flex-Basis: "50%";
+    background-Color: "#eee";
+}
+.Title
+{
+    width: 100px;
+    height: 20px;
+}
+
