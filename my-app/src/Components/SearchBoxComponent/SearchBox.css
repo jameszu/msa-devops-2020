@@ -4,9 +4,10 @@
     margin: 20px;
 }
 
-.MuiGrid-root div
+.MuiGrid-root
 {
     margin: auto;
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
+    
 }

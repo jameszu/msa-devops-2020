@@ -24,7 +24,7 @@ function ContentCard(props: IContentCardProps)
                         image={props.ImageUrl}
                     />
                     <CardContent>
-                        <Typography className="Title" gutterBottom variant="h5" component="h5">
+                        <Typography gutterBottom variant="h5" component="h5">
                             {props.Title}
                         </Typography>
                         <Typography variant="body2" 
