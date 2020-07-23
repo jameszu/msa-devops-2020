@@ -1,14 +1,15 @@
 .ContentCardContainer
 {
-    max-width: 350px;
+    max-width: 340px;
     margin: auto;
     
 }
 .ContentCardImage
 {
     height: 300px !important;
-    max-width: 250px;
+    max-width: 300px;
     margin: auto;
+    margin-top: 10px;
     
 }
 .ContentCardDescription

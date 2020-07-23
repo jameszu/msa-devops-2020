@@ -35,7 +35,9 @@ function ContentGrid(props: IContentGridProps) {
       const dimentions = "w500";
       let images: JSX.Element[] = [];
       dataFromAPI.forEach(element => {
+        
         if (dataFromAPI === [{ poster_path: "", overview: "", original_title: "" }]) return null;
+        if (element.poster_path === ""){element.poster_path = "%PUBLIC_URL%/notfound_0.png"}
         images.push(
             <Grid item md={4} lg={3} className="ContentGridCard">
                 <ContentCard 
