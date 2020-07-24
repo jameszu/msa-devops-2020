@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-
+  background-color: #FFFFFF;
 }
 
 .App-logo {
@@ -12,5 +12,13 @@ h1
 { 
   font-family: "Roboto Light";
   margin: 12px;
+}
+.footer
+{
+  padding: 0 1rem 1rem;
+  color: black;
+  text-align: center;
+  font-size: 80%;
+  background-color: #bae1ff;
 }
 
