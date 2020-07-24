@@ -2,9 +2,9 @@ import React,{useState} from 'react';
 import './App.css';
 import SearchBox from './Components/SearchBoxComponent/SearchBox';
 import ContentGrid from './Components/ContentGridComponent/ContentGrid';
+import NavBar from './Components/NavBarComponent/NavBar';
 import { IUserInput } from './Common/Interfaces';
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core';
-
 const theme = createMuiTheme({
   breakpoints: {
     values: {
@@ -28,7 +28,9 @@ function App() {
 
   return (
     <div className="App" >
-      <h1>Search Any Movie U Want</h1>
+      <NavBar/>
+      
+      <h1>Hello there, What movie do you want?</h1>
       <MuiThemeProvider theme={theme}>
           <SearchBox SetUserInput={(a: IUserInput) => SetUserInput(a)}/>
           <ContentGrid InputQuery={UserInput.InputQuery}/>

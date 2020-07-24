@@ -14,7 +14,7 @@ interface IContentGridProps {
 }
 
 function ContentGrid(props: IContentGridProps) {
-    var API_KEY = process.env.REACT_APP_API_KEY;
+    const API_KEY = process.env.REACT_APP_API_KEY;
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
         { poster_path: "", overview: "", original_title: ""}
     ]);
@@ -31,7 +31,7 @@ function ContentGrid(props: IContentGridProps) {
           .catch(() => console.log("it didn't work")
           );
 
-      }, [props.InputQuery]);
+      }, [props.InputQuery, API_KEY]);
       const dimentions = "w500";
       let images: JSX.Element[] = [];
       dataFromAPI.forEach(element => {
