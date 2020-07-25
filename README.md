@@ -1,5 +1,4 @@
 # MSA-Devops-2020-Webapp
-<br>
 This is a simple movie search web app using Microsoft build/release pipelines
 <br><br>
 The pipelines are used to deploy the ReactJS app to [THIS webpage](https://msa-2020-devops-james.azurewebsites.net/), powered by Microsoft azure
