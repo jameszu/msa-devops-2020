@@ -1,7 +1,11 @@
 # MSA-Devops-2020-Webapp
 
-This is a simple movie search web app using Microsoft build/release pipline
-<br><br> This web app allows the user to search all kinds of movies/TV series and filter out by years, category and etc.
+This is a simple movie search web app using Microsoft build/release pipelines
+<br><br> 
+The pipelines are used to deploy the ReactJS app to [THIS website](https://msa-2020-devops-james.azurewebsites.net/), powered by Microsoft azure
+<br>This web app allows the user to search any movie they want and show the titles, ratings and plots of the movies.
+<br> Once the user clicks into the movie cards, it will open a new tab which shows the results on [The Movie DataBase](https://www.themoviedb.org/).
+<br> The original idea is to make a pop-up dialog for movie details but it is aborted due to the time constraint.
 
 ## TimeStamp
 ### 19/09/2020
@@ -12,3 +16,7 @@ The first update. Built the basic search box and content cards. Next step would 
 
 FINALLY made the API key invisable in the deployed website. <br>
 It turned out the .env variable will not be passed through with the deployed website. Wrote a script to pass the key into the .env
+
+### 25/09/2020
+
+Added some features working on final design.
