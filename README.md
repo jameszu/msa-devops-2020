@@ -1,4 +1,5 @@
 # MSA-Devops-2020-Webapp
+[![Build Status](https://dev.azure.com/msa-devops-2020-james/msa-devops-2020-james/_apis/build/status/jameszu.msa-devops-2020?branchName=master)](https://dev.azure.com/msa-devops-2020-james/msa-devops-2020-james/_build/latest?definitionId=1&branchName=master)
 This is a simple movie search web app using Microsoft build/release pipelines
 <br><br>
 The pipelines are used to deploy the ReactJS app to [THIS webpage](https://msa-2020-devops-james.azurewebsites.net/), powered by Microsoft azure
