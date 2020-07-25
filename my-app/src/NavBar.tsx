@@ -6,7 +6,7 @@ import {
     Typography,
     Slide
   } from "@material-ui/core";
-import Menu from '@material-ui/icons/Menu';
+import TheatersSharpIcon from '@material-ui/icons/TheatersSharp';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 interface Props {
@@ -16,7 +16,7 @@ interface Props {
 
 function HideNavBar(props: Props)
 {
-  const { children} = props;
+  const {children} = props;
   const trigger = useScrollTrigger();
   return (
     <Slide appear={false} direction="down" in={!trigger}>
@@ -30,11 +30,12 @@ export default function NavBar()
   return (
     <div>
       <HideNavBar>
-        <AppBar>
+        <AppBar >
             <Toolbar variant="dense">
-              <IconButton edge="start" color="inherit" aria-label="open drawer">
-                <Menu />
+              <IconButton edge='start' color="inherit" aria-label="open drawer" href='/#'>
+                <TheatersSharpIcon/>
               </IconButton>
+              
               <Typography variant="h6" noWrap> The Movie Web App </Typography>
             </Toolbar>
           </AppBar>

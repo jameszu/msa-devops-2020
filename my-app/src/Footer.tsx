@@ -4,11 +4,16 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     button: {
-      margin: "2px",
+      margin: "7px",
       backgroundColor: "white",
       variant: "outlined",
-      textTransform: "none"
+      textTransform: "none",
+      fontSize: 12,
+      border: 0,
+      borderRadius: 3,
+      fontFamily: 'Roboto',
     },
+
   }));
 
 function Footer()
@@ -17,7 +22,7 @@ function Footer()
     return (
         <div className="footer">
             <div>
-                <Button href="https://github.com/jameszu/msa-devops-2020" variant="outlined" startIcon={<GitHubIcon />} className={classes.button}>
+                <Button href="https://github.com/jameszu/msa-devops-2020" startIcon={<GitHubIcon />} className={classes.button}>
                     GitHub
                 </Button>
             </div>

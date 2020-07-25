@@ -32,15 +32,20 @@ function SearchBox(props: ISearchBoxProps)
         }
     }
 
-    return <div
-    className="SearchBoxContainer">
-        <Grid container spacing={1}>
+    return (
+    <div className="SearchBoxContainer">
+        <div className="title">
+            <h2 className="welcome">Welcome</h2>
+            <h3>Search Any Movie You Want</h3>
+        </div>
+        
+        <Grid className="search" container spacing={1}>
             <Grid item xs={12}>
                 <TextField
                     id="outlined-full-width"
                     label="What would you like ot search"
                     variant="outlined"
-                    fullWidth
+                    style = {{width: '70%'}} 
                     onClick={() => setHasFocus(true)}
                     value={InputQuery}
                     size="small"
@@ -57,5 +62,6 @@ function SearchBox(props: ISearchBoxProps)
             </Grid>
         </Grid>
     </div>
+    )
 }
 export default SearchBox

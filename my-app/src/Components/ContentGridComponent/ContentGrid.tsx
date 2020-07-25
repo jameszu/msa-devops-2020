@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import ContentCard from '../ContentCardComponent/ContentCard';
 import { Grid } from '@material-ui/core';
+import { Rating } from '@material-ui/lab';
 import './ContentGrid.css';
 
 interface IState {
     overview: string | undefined;
     poster_path: string | null;
     original_title: string | undefined;
+    vote_average: number | 0;
+    id: number | 0;
   }
 interface IContentGridProps {
     InputQuery: string | null;
@@ -16,7 +19,7 @@ interface IContentGridProps {
 function ContentGrid(props: IContentGridProps) {
     const API_KEY = process.env.REACT_APP_API_KEY;
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
-        { poster_path: "", overview: "", original_title: ""}
+        { poster_path: "", overview: "", original_title: "", vote_average: 0, id: 0}
     ]);
     useEffect(() => {
         fetch(
@@ -28,28 +31,30 @@ function ContentGrid(props: IContentGridProps) {
         )
           .then(res => res.json())
           .then(res => setDataFromAPI(res.results))
-          .catch(() => console.log("it didn't work")
+          .catch(() => console.log("There is an issue from API, please check the input")
           );
 
       }, [props.InputQuery, API_KEY]);
       const dimentions = "w500";
-      let images: JSX.Element[] = [];
+      let card: JSX.Element[] = [];
       dataFromAPI.forEach(element => {
         
-        if (dataFromAPI === [{ poster_path: "", overview: "", original_title: "" }]) return null;
+        if (dataFromAPI === [{ poster_path: "", overview: "", original_title: "", vote_average: 0, id: 0}]) return null;
         if (element.poster_path === ""){element.poster_path = "%PUBLIC_URL%/notfound_0.png"}
-        images.push(
+        card.push(
             <Grid item md={4} lg={3} className="ContentGridCard">
                 <ContentCard 
                 ImageUrl={"https://image.tmdb.org/t/p/" + dimentions + element.poster_path} 
                 Plot={element.overview}
-                Title={element.original_title} />
+                Title={element.original_title}
+                rating={element.vote_average*0.5}
+                ID={element.id} />
             </Grid>)
       });
     return (
         <div>
             <Grid container spacing={3} className="ContentGridContainer">
-                {images}
+                {card}
             </Grid>
         </div>
     )

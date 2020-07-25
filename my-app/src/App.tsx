@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
+import { IUserInput } from './Common/Interfaces';
 import './App.css';
 import SearchBox from './Components/SearchBoxComponent/SearchBox';
 import ContentGrid from './Components/ContentGridComponent/ContentGrid';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import { IUserInput } from './Common/Interfaces';
+
 import {createMuiTheme, MuiThemeProvider, Grid} from '@material-ui/core';
 const theme = createMuiTheme({
   breakpoints: {
@@ -16,7 +17,9 @@ const theme = createMuiTheme({
       xl: 1920,
     },
   },
+  
 })
+
 
 function App() {
   const [UserInput, setUserInput] = useState<IUserInput>({
@@ -30,8 +33,6 @@ function App() {
   return (
     <div className="App" >
       <NavBar/>
-      
-      <h1>Hello there, What movie do you want?</h1>
       <MuiThemeProvider theme={theme}>
         <SearchBox SetUserInput={(a: IUserInput) => SetUserInput(a)}/>
         <ContentGrid InputQuery={UserInput.InputQuery}/>
