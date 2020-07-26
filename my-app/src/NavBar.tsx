@@ -30,7 +30,7 @@ export default function NavBar()
   return (
     <div>
       <HideNavBar>
-        <AppBar >
+        <AppBar elevation={0} >
             <Toolbar variant="dense">
               <IconButton edge='start' color="inherit" aria-label="open drawer" href='/#'>
                 <TheatersSharpIcon/>

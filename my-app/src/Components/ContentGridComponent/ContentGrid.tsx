@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ContentCard from '../ContentCardComponent/ContentCard';
 import { Grid } from '@material-ui/core';
-import { Rating } from '@material-ui/lab';
 import './ContentGrid.css';
 
 interface IState {
@@ -21,6 +20,7 @@ function ContentGrid(props: IContentGridProps) {
     const [dataFromAPI, setDataFromAPI] = useState<IState[]>([
         { poster_path: "", overview: "", original_title: "", vote_average: 0, id: 0}
     ]);
+    var URL = "";
     useEffect(() => {
         fetch(
             "https://api.themoviedb.org/3/search/movie?api_key=" +
@@ -37,14 +37,16 @@ function ContentGrid(props: IContentGridProps) {
       }, [props.InputQuery, API_KEY]);
       const dimentions = "w500";
       let card: JSX.Element[] = [];
-      dataFromAPI.forEach(element => {
+      dataFromAPI.forEach((element: IState, i: Number) => {
         
-        if (dataFromAPI === [{ poster_path: "", overview: "", original_title: "", vote_average: 0, id: 0}]) return null;
-        if (element.poster_path === ""){element.poster_path = "%PUBLIC_URL%/notfound_0.png"}
+        if (dataFromAPI === [{ poster_path: "", overview: "", original_title: "", vote_average: 0, id: 0}])  return null;
+        if (element.poster_path === null){URL = "notfound_0.png";}
+        else{URL = "https://image.tmdb.org/t/p/" + dimentions + element.poster_path;}
+        
         card.push(
-            <Grid item md={4} lg={3} className="ContentGridCard">
+            <Grid key={"card_"+i} item md={4} lg={3} className="ContentGridCard">
                 <ContentCard 
-                ImageUrl={"https://image.tmdb.org/t/p/" + dimentions + element.poster_path} 
+                ImageUrl={URL} 
                 Plot={element.overview}
                 Title={element.original_title}
                 rating={element.vote_average*0.5}

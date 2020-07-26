@@ -1,10 +1,8 @@
 .SearchBoxContainer
 {
     color: white;
-    margin: auto;
-    height: 400px;
-    background: linear-gradient(180deg, rgba(63,81,181,1) 0%, rgba(4,204,251,1) 85%, rgba(0,212,255,1) 100%);
-    
+    margin-top: 48px;
+    height: 350px;
 }
 
 .MuiGrid-root
@@ -16,9 +14,17 @@
 }
 .title
 {
-    left: -20%;
-    margin-top: 48px;
+    padding-top: 20px;
+    padding-left: 15%;
     font-size: 2em;
-    font-weight: 300;
+    /* font-weight: bold; */
     line-height: 1;
+    text-align: left;
+    font-family: "Roboto";
 }
+.background
+{
+    background: linear-gradient(180deg, rgba(63,81,192,1) 0%, rgba(186,225,255,1) 87%);
+
+}
+

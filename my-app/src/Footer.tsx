@@ -28,21 +28,40 @@ function Footer()
             </div>
 
             <div>
-                lalal just placeholders right now
+                Didn't see any results? Maybe check your spelling~
             </div>
 
             <div>
-
-                Data from this site is brought by{" "}
+                Huge thanks to {" "}
                 <a
                 style={{ color: "blue" }}
                 href="https://www.themoviedb.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 >
-                <u>TMDB</u>
+                <u>TMDB </u>
                 </a>
+                for the data API
                 
+            </div>
+            <div>
+                Huge thanks to {" "}
+                <a
+                style={{ color: "blue" }}
+                href="https://nzmsa.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                <u>MSA </u>
+                </a>
+                for instructions
+                
+            </div>
+            <div>
+                AUTHOR: James You 2020
+            </div>
+            <div>
+                NO RIGHTS RESERVED
             </div>
         </div>
     )
