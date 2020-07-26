@@ -22,7 +22,10 @@ function Footer()
     return (
         <div className="footer">
             <div>
-                <Button href="https://github.com/jameszu/msa-devops-2020" startIcon={<GitHubIcon />} className={classes.button}>
+                <Button href="https://github.com/jameszu/msa-devops-2020" 
+                startIcon={<GitHubIcon />} 
+                target="_blank"
+                className={classes.button}>
                     GitHub
                 </Button>
             </div>
