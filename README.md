@@ -6,7 +6,8 @@ The pipelines are used to deploy the ReactJS app to [THIS webpage](https://msa-2
 <br>This web app allows the user to search any movie they want and show the titles, ratings and plots of the movies.
 <br><br> Once the user clicks into the movie cards, it will open a new tab which shows the results on [The Movie DataBase](https://www.themoviedb.org/).
 <br> The original idea is to make a pop-up dialog for movie details but it is aborted due to the time constraint.
-
+#### PS
+There is an known issue that the website does not load any images. It might be the API error, try to reload the page a few minutes later.
 ## TimeStamp
 ### 19/09/2020
 
