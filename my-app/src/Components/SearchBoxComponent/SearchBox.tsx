@@ -44,7 +44,7 @@ function SearchBox(props: ISearchBoxProps)
                     <Grid item xs={12}>
                         <TextField
                             id="outlined-full-width"
-                            label="What would you like ot search"
+                            label="What would you like to search"
                             variant="outlined"
                             style = {{width: '70%'}} 
                             onClick={() => setHasFocus(true)}
