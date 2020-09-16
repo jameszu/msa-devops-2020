@@ -10,21 +10,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  rootDir: "my-app"
+  rootDir: "voting-webapp"
   buildDir: "$(rootDir)/build"
 
 steps:
-  - task: CmdLine@2
-    inputs:
-      script: 'echo REACT_APP_API_KEY = $(APP_KEY) > $(rootDir)/.env' 
-    displayName: 'Setting environment variables'
 
   - task: NodeTool@0
     inputs:
       versionSpec: '10.x'
     displayName: 'Install Node.js'
-    env:
-        REACT_APP_API_KEY: $(APP_KEY)
+
   - script: |
       cd $(rootDir)
       npm install
